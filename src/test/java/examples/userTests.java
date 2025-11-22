@@ -1,5 +1,6 @@
 package examples;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import org.example.User;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
@@ -32,6 +33,7 @@ class userTests {
                 .baseUri(baseUrl)
                 .contentType("application/json")
                 .accept("application/json")
+                .filter(new AllureRestAssured())
                 .when()
                 .body(body)
                 .post("/user")
@@ -60,6 +62,7 @@ class userTests {
                 .baseUri(baseUrl)
                 .contentType("application/json")
                 .accept("application/json")
+                .filter(new AllureRestAssured())
                 .when()
                 .body(body)
                 .post("/user")
@@ -80,6 +83,7 @@ class userTests {
                 .baseUri(baseUrl)
                 .contentType("application/json")
                 .accept("application/json")
+                .filter(new AllureRestAssured())
                 .when()
                 .body(user)
                 .post("/user")
@@ -100,6 +104,7 @@ class userTests {
                 .baseUri(baseUrl)
                 .contentType("application/json")
                 .accept("application/json")
+                .filter(new AllureRestAssured())
                 .when()
                 .get("/user/" + username)
                 .then()
@@ -125,6 +130,7 @@ class userTests {
                 .baseUri(baseUrl)
                 .contentType("application/json")
                 .accept("application/json")
+                .filter(new AllureRestAssured())
                 .when()
                 .get("/user/" + username)
                 .then()
